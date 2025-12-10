@@ -1,8 +1,11 @@
+import java.util.ArrayList;
+
 public class Customer {
     private String name;
     private String surname;
     private String email;
     private String phone;
+    private ArrayList<Reservation> reservations;
 
 
     public Customer(String name, String surname, String email, String phone) {
@@ -10,6 +13,8 @@ public class Customer {
         this.surname = surname;
         this.email = email;
         this.phone = phone;
+        this.reservations = new ArrayList<>();
+
     }
     public String getName() {
         return name;
@@ -35,4 +40,15 @@ public class Customer {
     public void setPhone (String phone) {
         this.phone = phone;
     }
-}
+
+    public void addReservation(Reservation r) {
+        reservations.add(r);
+    }
+    public void removeReservation(Reservation r) {
+        reservations.remove(r);
+    }
+    public ArrayList<Reservation> getReservations() {
+        return reservations;
+    }
+    }
+
