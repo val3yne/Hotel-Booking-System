@@ -14,26 +14,26 @@ public class CashPayment extends Payment {
     }
 
     public double getChange() {
-        return change;
+        return change; 
     }
 
     @Override
     public boolean processPayment() {
 
         try {
-            if (getAmount() <= 0) { // ödeme tutarı 0
+            if (getAmount() <= 0) { 
                 throw new IllegalArgumentException("Amount isn't valid");
             }
 
-            if (cashReceived <= 0) { // customer didnt  pay
+            if (cashReceived <= 0) { 
                 throw new IllegalArgumentException("Cash received isn't valid");
             }
 
-            if (cashReceived < getAmount()) { // yetersiz
+            if (cashReceived < getAmount()) {
                 throw new IllegalArgumentException("Not enough cash");
             }
 
-            change = cashReceived - getAmount(); // para ustu
+            change = cashReceived - getAmount(); // calculate change
             System.out.println("Cash payment successful");
             System.out.println("Change: " + change);
 
@@ -45,5 +45,6 @@ public class CashPayment extends Payment {
         }
     }
 }
+
 
 
