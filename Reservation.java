@@ -73,8 +73,10 @@ public class Reservation implements Bookable, Cancelable {
             System.out.println("Check-out: " + checkOutDate);
             System.out.println("Nights: " + nights);
             System.out.println("Total: " + totalPrice);
+            customer.addReservation(this);
         } else {
             System.out.println("You can't book the room, it is not available!");
+            FileManager.writeReservation(this);
 
         }
     }
