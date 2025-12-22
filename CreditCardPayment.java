@@ -15,7 +15,7 @@ public class CreditCardPayment extends Payment {
     public boolean processPayment() {
         System.out.println("Processing credit card payment for " + cardHolderName + "...");
 
-        try {
+        try { //validates 16 digits
             if (cardNumber.length() < 16) {
                 throw new IllegalArgumentException("Card number is not valid");
                 }
@@ -48,4 +48,5 @@ public class CreditCardPayment extends Payment {
     public String getExpiryDate() {
         return expiryDate;
     }
+
 }
