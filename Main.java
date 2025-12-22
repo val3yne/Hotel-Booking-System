@@ -10,7 +10,7 @@ public class Main {
            // customers
             Customer c1 = new Customer("Su", "Elagöz", "su@gmail.com", "4443332221");
             Customer c2 = new Customer("Tuğberk", "Erdönmez", "tugberk@mail.com", "1111222233");
-           
+
             // adding customers to system
             booking.addCustomer(c1);
             booking.addCustomer(c2);
@@ -70,27 +70,6 @@ public class Main {
             );
 
             reservation2.makePayment(creditCardPayment);
-               Payment creditCardPayment = new CreditCardPayment(
-                    reservation2.getTotalPrice(),   // amount
-                    "P002",                          // payment id
-                    "23-12-2025",                    // payment date
-                    "1234-5678-9012-3456",           // card number
-                    "Tugberk Erdonmez",              // card holder name
-                    "12/27"                          // expiry
-            );
-
-            reservation2.makePayment(creditCardPayment);
-               Payment creditCardPayment = new CreditCardPayment(
-                    reservation2.getTotalPrice(),   // amount
-                    "P002",                          // payment id
-                    "23-12-2025",                    // payment date
-                    "1234-5678-9012-3456",           // card number
-                    "Tugberk Erdonmez",              // card holder name
-                    "12/27"                          // expiry
-            );
-
-            reservation2.makePayment(creditCardPayment);
-            System.out.println();
 
           // trying to create a customer , shows exception handling
             try {
@@ -104,38 +83,9 @@ public class Main {
 
         } catch (InvalidCustomerDataException e) {
             System.out.println("Customer data error: " + e.getMessage());
-        }
+
+    } catch (RoomNotAvailableException e) {
+        System.out.println("Room error: " + e.getMessage());
     }
-}
-
-          // trying to create a customer , shows exception handling
-            try {
-                Customer c3 = new Customer("Beren","Bazayıt","beren@gmail.com", "");
-                booking.addCustomer(c3);
-                System.out.println("- " + c3.getName());
-            } catch (InvalidCustomerDataException e) {
-                System.out.println("Beren Bazayıt couldn't be added: " + e.getMessage());
-            }
-            System.out.println("\nSystem finished.");
-
-        } catch (InvalidCustomerDataException e) {
-            System.out.println("Customer data error: " + e.getMessage());
-        }
-    }
-}
-
-          // trying to create a customer , shows exception handling
-            try {
-                Customer c3 = new Customer("Beren","Bazayıt","beren@gmail.com", "");
-                booking.addCustomer(c3);
-                System.out.println("- " + c3.getName());
-            } catch (InvalidCustomerDataException e) {
-                System.out.println("Beren Bazayıt couldn't be added: " + e.getMessage());
-            }
-            System.out.println("\nSystem finished.");
-
-        } catch (InvalidCustomerDataException e) {
-            System.out.println("Customer data error: " + e.getMessage());
-        }
     }
 }
