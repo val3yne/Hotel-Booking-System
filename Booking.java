@@ -32,22 +32,21 @@ public class Booking {
     void addCustomer(Customer customer){
         customers.add(customer);
     }
-    public void createReservation(String reservationId, Customer customer, Room room) {
+    public void createReservation(String reservationId, Customer customer, Room room)
+            throws RoomNotAvailableException {
 
         if (!room.isAvailable()) {
-            System.out.println("Room is not available.");
-            return;
+            throw new RoomNotAvailableException("Room " + room.getRoomNumber() + " is not available.");
         }
 
         LocalDate checkIn = LocalDate.now();
-        LocalDate checkOut = checkIn.plusDays(3); // random number for testing
+        LocalDate checkOut = checkIn.plusDays(3);
 
         Reservation reservation =
                 new Reservation(reservationId, customer, room, checkIn, checkOut);
 
         reservations.add(reservation);
     }
-
 
     public ArrayList<Room> getRooms() {
         return rooms;
@@ -73,3 +72,5 @@ public class Booking {
     }
 
 }
+
+
