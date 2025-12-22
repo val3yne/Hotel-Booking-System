@@ -5,7 +5,7 @@ This project is a console based hotel booking system developed in Java using Obj
 It models a simple hotel reservation workflow including customers, rooms, reservations, payments, date handling, exception management, and basic file operations.
 
 
-##Features
+## Features
 
 - Customer creation with validation and custom exceptions  
 - Room management with different room types  
