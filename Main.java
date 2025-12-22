@@ -1,3 +1,4 @@
+import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) {
@@ -15,6 +16,14 @@ public class Main {
             booking.addCustomer(c1);
             booking.addCustomer(c2);
 
+            try {
+    c1.saveToFile();
+    c2.saveToFile();
+    System.out.println("Customers saved to file.");
+} catch (IOException e) {
+    System.out.println("Error saving customers: " + e.getMessage());
+}
+            
 
             System.out.println("Customers added:");
             System.out.println("- " + c1.getName());
