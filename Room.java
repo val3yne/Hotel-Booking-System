@@ -1,17 +1,17 @@
 public class Room {
     private String roomNumber;
-    private String capacity;
+    private int capacity;
     private double price;
     private boolean isAvailable;
 
 
-    public Room(String roomNumber, String capacity, double price, boolean isAvailable) {
+    public Room(String roomNumber, int capacity, double price, boolean isAvailable) {
         try {
             if (capacity == null || capacity.isEmpty()) {
-                throw new InvalidRoomDataException("Capacity cannot be empty");
+                throw new InvalidRoomDataException("Capacity can't be empty");
             }
             if (price < 0) {
-                throw new InvalidRoomDataException("Price cannot be negative");
+                throw new InvalidRoomDataException("Price can't be negative");
             }
 
             this.roomNumber = roomNumber;
@@ -24,7 +24,7 @@ public class Room {
         }
     }
 
-    public Room(String roomNumber, String capacity, double price) {
+    public Room(String roomNumber, int capacity, double price) {
         this.roomNumber = roomNumber;
         this.capacity = capacity;
         this.price = price;
@@ -47,7 +47,7 @@ public class Room {
         return capacity;
     }
 
-    public void setCapacity(String capacity) {
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 
@@ -74,4 +74,5 @@ public class Room {
             System.out.println("Room is not available");
         }
     }
+
 
